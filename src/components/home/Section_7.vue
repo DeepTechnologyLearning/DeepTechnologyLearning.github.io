@@ -46,7 +46,7 @@ export default {
 <style scoped>
 .section-7 {
   padding: 4rem 0 2rem 0;
-  background-color: #333;
+  background-color: #000;
   color: white;
 }
 
@@ -94,7 +94,7 @@ export default {
 }
 
 .footer-bottom {
-  border-top: 1px solid #444;
+  border-top: 1px solid #333;
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;
@@ -115,7 +115,7 @@ export default {
 }
 
 .social-links a:hover {
-  color: #fff;
+  color: #00ff88;
 }
 
 @media (max-width: 768px) {
@@ -124,4 +124,4 @@ export default {
     text-align: center;
   }
 }
-</style> 
+</style>

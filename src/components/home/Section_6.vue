@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .section-6 {
   padding: 4rem 0;
-  background-color: #007bff;
+  background-color: #000;
   color: white;
 }
 
@@ -51,11 +51,12 @@ export default {
 
 .newsletter-content h2 {
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .newsletter-content p {
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: #ccc;
 }
 
 .newsletter-form {
@@ -69,11 +70,13 @@ export default {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  background: #111;
+  color: white;
 }
 
 .newsletter-form button {
-  background: white;
-  color: #007bff;
+  background: #00ff88;
+  color: #000;
   border: none;
   padding: 0.8rem 2rem;
   border-radius: 5px;
@@ -83,7 +86,7 @@ export default {
 }
 
 .newsletter-form button:hover {
-  background: #f8f9fa;
+  background: #00cc6a;
 }
 
 @media (max-width: 768px) {

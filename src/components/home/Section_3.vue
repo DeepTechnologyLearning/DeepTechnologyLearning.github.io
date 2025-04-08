@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .section-3 {
   padding: 4rem 0;
-  background-color: #007bff;
+  background-color: #000;
   color: white;
 }
 
@@ -50,10 +50,12 @@ export default {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #00ff88;
 }
 
 .stat-label {
   font-size: 1.2rem;
   opacity: 0.9;
+  color: #ccc;
 }
 </style> 

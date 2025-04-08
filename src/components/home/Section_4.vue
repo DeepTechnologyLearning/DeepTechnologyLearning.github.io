@@ -47,7 +47,8 @@ export default {
 <style scoped>
 .section-4 {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: #000;
+  color: white;
 }
 
 .testimonials {
@@ -58,7 +59,7 @@ export default {
 }
 
 .testimonial-card {
-  background: white;
+  background: #111;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -66,7 +67,7 @@ export default {
 
 .quote {
   font-style: italic;
-  color: #666;
+  color: #ccc;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -85,12 +86,12 @@ export default {
 
 .author-info h4 {
   margin: 0;
-  color: #333;
+  color: #fff;
 }
 
 .role {
-  color: #666;
+  color: #ccc;
   margin: 0;
   font-size: 0.9rem;
 }
-</style> 
+</style>

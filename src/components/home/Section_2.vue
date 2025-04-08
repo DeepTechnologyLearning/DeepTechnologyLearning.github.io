@@ -43,7 +43,8 @@ export default {
 <style scoped>
 .section-2 {
   padding: 4rem 0;
-  background-color: #ffffff;
+  background-color: #000;
+  color: white;
 }
 
 .tech-grid {
@@ -56,7 +57,7 @@ export default {
 .tech-card {
   padding: 2rem;
   border-radius: 10px;
-  background: #f8f9fa;
+  background: #111;
   transition: transform 0.3s ease;
 }
 
@@ -66,18 +67,18 @@ export default {
 
 .tech-card i {
   font-size: 2.5rem;
-  color: #007bff;
+  color: #00ff88;
   margin-bottom: 1rem;
 }
 
 .tech-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #fff;
 }
 
 .tech-card p {
-  color: #666;
+  color: #ccc;
   line-height: 1.6;
 }
 </style> 

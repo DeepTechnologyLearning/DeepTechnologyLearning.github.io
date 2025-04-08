@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .section-1 {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: #000;
   text-align: center;
 }
 
@@ -33,12 +33,12 @@ export default {
 
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ccc;
 }
 </style> 

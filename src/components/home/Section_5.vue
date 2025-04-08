@@ -51,7 +51,8 @@ export default {
 <style scoped>
 .section-5 {
   padding: 4rem 0;
-  background-color: #ffffff;
+  background-color: #000;
+  color: white;
 }
 
 .courses-grid {
@@ -62,7 +63,7 @@ export default {
 }
 
 .course-card {
-  background: white;
+  background: #111;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -85,11 +86,11 @@ export default {
 
 .course-content h3 {
   margin: 0 0 1rem 0;
-  color: #333;
+  color: #fff;
 }
 
 .description {
-  color: #666;
+  color: #ccc;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -98,22 +99,23 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  color: #666;
+  color: #ccc;
   font-size: 0.9rem;
 }
 
 .enroll-btn {
-  background: #007bff;
-  color: white;
+  background: #00ff88;
+  color: #000;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
   transition: background 0.3s ease;
+  font-weight: bold;
 }
 
 .enroll-btn:hover {
-  background: #0056b3;
+  background: #00cc6a;
 }
 </style> 

@@ -10,6 +10,7 @@
 
 <style lang="less">
 #app {
+  background-color: #000;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
