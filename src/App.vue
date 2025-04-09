@@ -1,16 +1,82 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav class="main-nav">
+      <div class="nav-content">
+        <div class="nav-links">
+          <router-link to="/">Home</router-link>
+          <router-link to="/about">About</router-link>
+        </div>
+        <button class="menu-toggle" @click="toggleMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu" :class="{ 'active': isMenuOpen }">
+        <router-link to="/" @click="closeMenu">Home</router-link>
+        <router-link to="/about" @click="closeMenu">About</router-link>
+      </div>
     </nav>
     <router-view/>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      isMenuOpen: false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+    }
+  }
+}
+</script>
+
 <style lang="less">
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 body{
   margin: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 #app {
@@ -20,18 +86,115 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  &::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 40px;
+    right: 0;
+    width: .5px;
+    opacity: .2;
+    height: 100%;
+    background: #fff;
+  }
+
+  &::after{
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 40px;
+    width: .5px;
+    opacity: .2;
+    height: 100%;
+    background: #fff;
+  }
 }
 
-nav {
-  padding: 30px;
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: transparent;
+  z-index: 1000;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  position: fixed;
+  right: 5px;
+  top: 10px;
+  z-index: 1001;
+}
+
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.main-nav a.router-link-exact-active {
+  background: rgba(0, 255, 0, 0.2);
+  color: #00ff00;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
   }
 }
 </style>
