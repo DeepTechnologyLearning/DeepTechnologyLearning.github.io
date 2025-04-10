@@ -46,6 +46,7 @@ export default {
 
 <style scoped>
 .section-4 {
+  position: relative;
   padding: 4rem 0;
   background-color: #000;
   color: white;
