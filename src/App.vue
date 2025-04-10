@@ -44,39 +44,45 @@ export default {
 
 <style lang="less">
 html {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
-  width: 6px;
+  width: 0;
+  opacity: 0;
 }
 
 html::-webkit-scrollbar-track {
   background: transparent;
+  opacity: 0;
 }
 
 html::-webkit-scrollbar-thumb {
   background-color: transparent;
+  opacity: 0;
 }
 
 body{
   margin: 0;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-  width: 6px;
+  width: 0;
+  opacity: 0;
 }
 
 body::-webkit-scrollbar-track {
   background: transparent;
+  opacity: 0;
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: transparent;
+  opacity: 0;
 }
 
 #app {

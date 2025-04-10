@@ -1,11 +1,53 @@
 <template>
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">Deep Technology Learning</h1>
-      <p class="hero-subtitle">Explorez les technologies de demain</p>
-      <div class="hero-buttons">
-        <button class="btn btn-primary">Commencer</button>
-        <button class="btn btn-outline">En savoir plus</button>
+  <section class="A">
+    <div class="AA">
+      <h1 class="AAA">APPRENTISSAGE PROFOND TECHNOLOGIQUE</h1>
+      <h2 class="AAB">
+        FORMEZ-VOUS À L'AVENIR<br>
+        MAÎTRISEZ L'IA ET L'INGÉNIERIE LOGICIEL<br>
+        AVEC EXPERTISE ET INNOVATION !
+      </h2>
+      <p class="AAC">
+        Embarquez pour une expérience d'apprentissage transformatrice dans la technologie. <br>
+        Améliorez votre expertise avec nos cours en ligne compétitifs conçus pour propulser votre carrière vers l'avant
+      </p>
+      <div class="AAD">
+        <div class="AADA">
+          <hr/>
+          <h3>
+            AUTOMATISATION DES COMpétences
+          </h3>
+          <p>
+            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+          </p>
+        </div>
+        <div class="AADB">
+          <hr/>
+          <h3>
+            AUTOMATISATION DES COMpétences
+          </h3>
+          <p>
+            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+          </p>
+        </div>
+        <div class="AADC">
+          <hr/>
+          <h3>
+            AUTOMATISATION DES COMpétences
+          </h3>
+          <p>
+            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+          </p>
+        </div>
+        <div class="AADD">
+          <hr/>
+          <h3>
+            AUTOMATISATION DES COMpétences
+          </h3>
+          <p>
+            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -17,9 +59,11 @@ export default {
 }
 </script>
 
-<style scoped>
-.hero-section {
+<style scoped >
+
+.A {
   position: relative;
+
   height: 100vh;
   width: 100%;
   background-image: url('@/assets/HomeImgCpm/18220887_v1016-c-02.png');
@@ -31,12 +75,11 @@ export default {
   justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 0;
   margin: 0;
   overflow: hidden;
 }
 
-.hero-section::before {
+.A::before {
   content: '';
   position: absolute;
   top: 0;
@@ -47,92 +90,104 @@ export default {
   z-index: 1;
 }
 
-.hero-content {
+.AA {
   position: relative;
   z-index: 2;
-  max-width: 800px;
   padding: 0 20px;
 }
 
-.hero-title {
-  font-size: 4rem;
+.AAA {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.btn {
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: #00ff00;
-  border: none;
-  color: #000;
-}
-
-.btn-primary:hover {
-  background: #00cc00;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid #00ff00;
-  color: #00ff00;
-}
-
-.btn-outline:hover {
-  background: #00ff00;
-  color: #000;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
+  letter-spacing: 2px;
   }
 
-  .hero-subtitle {
-    font-size: 1.2rem;
+.AAB {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.AAC {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.6;
+}
+
+.AAD {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    justify-content: flex-start;
+    align-self: center;
+    align-items: flex-end;
+    width: 81vw;
+    margin-bottom: 1.6rem;
+    display: flex;
+    position: relative;
+}
+
+.AAD * {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/*.AAD .AADA, .AAD .AADB, .AAD .AADC, .AAD .AADD{
+  width: 16%;
+}*/
+
+.AAD h3, p{
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.AAD hr{
+  width: 40%;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .AAA {
+    font-size: 18px;
   }
 
-  .hero-buttons {
+  .AAB {
+    font-size: 40px;
+  }
+
+  .AAC {
+    font-size: 14px;
+  }
+
+  .AAD {
+    align-items: center;
     flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .AAA {
+    font-size: 16px;
   }
 
-  .hero-subtitle {
-    font-size: 1rem;
+  .AAB {
+    font-size: 30px;
+  }
+
+  .AAC {
+    font-size: 13px;
   }
 }
 </style> 
