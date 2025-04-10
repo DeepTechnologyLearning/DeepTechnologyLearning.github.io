@@ -152,7 +152,7 @@ export default {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .AAD {
@@ -218,7 +218,16 @@ export default {
   }
 
   .AA{
-    margin: 100px 0px 60px 0px;
+    position: relative;
+    z-index: 2;
+    padding: 44px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .3);
+    margin: 88px 0px 60px 0px;
   }
 
   .AAA {
