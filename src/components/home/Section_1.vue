@@ -142,15 +142,20 @@ export default {
     position: relative;
 }
 
-.AAD * {
+.AADA, .AADB, .AADC, .AADD {
   display: flex;
   flex-direction: column;
   text-align: left;
+  opacity: 0.5;
+  transition: .7s;
+  cursor: pointer;
 }
 
-/*.AAD .AADA, .AAD .AADB, .AAD .AADC, .AAD .AADD{
-  width: 16%;
-}*/
+
+.AADA:hover, .AADB:hover, .AADC:hover, .AADD:hover{
+  opacity: 1;
+}
+
 
 .AAD h3, p{
   font-size: 12px;

@@ -3,11 +3,10 @@
     <nav class="main-nav">
       <div class="nav-content">
         <div class="nav-links">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
+          <img src="@/assets/LogoApp/LogoAppW2.png" width="30" height="30">
         </div>
         <button class="menu-toggle" @click="toggleMenu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -97,7 +96,7 @@ body::-webkit-scrollbar-thumb {
     content: '';
     position: fixed;
     top: 0;
-    left: 40px;
+    left: 70px;
     right: 0;
     width: .5px;
     opacity: .2;
@@ -109,7 +108,7 @@ body::-webkit-scrollbar-thumb {
     content: '';
     position: fixed;
     top: 0;
-    right: 40px;
+    right: 70px;
     width: .5px;
     opacity: .2;
     height: 100%;
@@ -128,11 +127,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
@@ -146,15 +144,12 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   cursor: pointer;
   padding: 0;
-  position: fixed;
-  right: 5px;
-  top: 10px;
-  z-index: 1001;
+  
 }
 
 .menu-toggle svg {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
   stroke: #fff;
 }
 
@@ -165,6 +160,7 @@ body::-webkit-scrollbar-thumb {
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  
 }
 
 .main-nav a:hover {
@@ -202,12 +198,6 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-  .nav-links {
-    display: none;
-  }
 
-  .mobile-menu {
-    display: flex;
-  }
 }
 </style>
