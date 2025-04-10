@@ -94,14 +94,16 @@ body::-webkit-scrollbar-thumb {
 
   &::before{
     content: '';
+    content: '';
     position: fixed;
     top: 0;
     left: 70px;
     right: 0;
-    width: .5px;
+    width: 0.5px;
     opacity: .2;
     height: 100%;
     background: #fff;
+    z-index: 1;
   }
 
   &::after{
@@ -121,8 +123,8 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px;
   background: transparent;
+  padding: 20px 16px 0 106px;
   z-index: 1000;
 }
 
@@ -191,6 +193,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 768px) {
+
+  .main-nav {
+    padding: 20px;
+  }
 
   #app{
     &::before, &::after{

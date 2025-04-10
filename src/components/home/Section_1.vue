@@ -1,5 +1,12 @@
 <template>
   <section class="A">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="@/assets/HomeBgVOC/7020022_Brain_Science_3840x2160.mp4" type="video/mp4">
+      </video>
+    </div>
+    <VerticalText />
+    <SocialIcons />
     <div class="AA">
       <h1 class="AAA">APPRENTISSAGE PROFOND TECHNOLOGIQUE</h1>
       <h2 class="AAB">
@@ -18,7 +25,7 @@
             AUTOMATISATION DES COMpétences
           </h3>
           <p>
-            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+            Maitrsier les compétences technologique à un prise abordables dès aujourd'hui *
           </p>
         </div>
         <div class="AADB">
@@ -27,7 +34,7 @@
             AUTOMATISATION DES COMpétences
           </h3>
           <p>
-            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+            Maitrsier les compétences technologique à un prise abordables dès aujourd'hui *
           </p>
         </div>
         <div class="AADC">
@@ -36,7 +43,7 @@
             AUTOMATISATION DES COMpétences
           </h3>
           <p>
-            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+            Maitrsier les compétences technologique à un prise abordables dès aujourd'hui *
           </p>
         </div>
         <div class="AADD">
@@ -45,7 +52,7 @@
             AUTOMATISATION DES COMpétences
           </h3>
           <p>
-            Maitrsier les compétences technologique à un prise abordables dès aujourd’hui *
+            Maitrsier les compétences technologique à un prise abordables dès aujourd'hui *
           </p>
         </div>
       </div>
@@ -54,8 +61,15 @@
 </template>
 
 <script>
+import VerticalText from './Section_1/VerticalText.vue'
+import SocialIcons from './Section_1/SocialIcons.vue'
+
 export default {
-  name: 'Section1'
+  name: 'Section1',
+  components: {
+    VerticalText,
+    SocialIcons
+  }
 }
 </script>
 
@@ -65,10 +79,6 @@ export default {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url('@/assets/HomeImgCpm/18220887_v1016-c-02.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,6 +88,21 @@ export default {
   overflow: hidden;
 }
 
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .A::before {
   content: '';
   position: absolute;
@@ -85,7 +110,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -163,7 +188,7 @@ export default {
 }
 
 .AAD hr{
-  width: 40%;
+  width: 100%;
   margin: 0;
 }
 
