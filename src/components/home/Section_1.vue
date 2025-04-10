@@ -1,8 +1,17 @@
 <template>
   <section class="A">
     <div class="video-background">
-      <video autoplay muted loop playsinline>
-        <source src="@/assets/HomeBgVOC/7020022_Brain_Science_3840x2160.mp4" type="video/mp4">
+      <video 
+        v-for="(video, index) in videos"
+        :key="video"
+        :ref="`video${index}`"
+        class="video-player"
+        :class="{ active: currentIndex === index }"
+        muted 
+        playsinline
+        loop
+      >
+        <source :src="require(`@/assets/HomeBgVOC/${video}`)" type="video/mp4">
       </video>
     </div>
     <VerticalText />
@@ -64,11 +73,66 @@
 import VerticalText from './Section_1/VerticalText.vue'
 import SocialIcons from './Section_1/SocialIcons.vue'
 
+function importAll(r) {
+  return r.keys().map(key => key.slice(2));
+}
+
 export default {
   name: 'Section1',
   components: {
     VerticalText,
     SocialIcons
+  },
+  data() {
+    const videoContext = require.context('@/assets/HomeBgVOC', false, /\.(mp4)$/);
+    const videos = importAll(videoContext);
+    
+    return {
+      videos,
+      currentIndex: 0,
+      transitionInterval: null
+    }
+  },
+  methods: {
+    async startVideo(index) {
+      try {
+        const video = this.$refs[`video${index}`][0];
+        if (video) {
+          video.currentTime = 0;
+          await video.play();
+        }
+      } catch (error) {
+        console.error('Erreur lors de la lecture de la vidéo:', error);
+      }
+    },
+    async switchToNextVideo() {
+      const nextIndex = (this.currentIndex + 1) % this.videos.length;
+      const nextVideo = this.$refs[`video${nextIndex}`][0];
+      
+      // Précharger et démarrer la prochaine vidéo
+      try {
+        await nextVideo.play();
+        // Attendre un court instant pour s'assurer que la vidéo est bien en lecture
+        await new Promise(resolve => setTimeout(resolve, 100));
+        this.currentIndex = nextIndex;
+      } catch (error) {
+        console.error('Erreur lors du changement de vidéo:', error);
+      }
+    }
+  },
+  async mounted() {
+    // Démarrer la première vidéo
+    await this.startVideo(0);
+
+    // Configurer la transition automatique
+    this.transitionInterval = setInterval(() => {
+      this.switchToNextVideo();
+    }, 10000); // Changer toutes les 10 secondes
+  },
+  beforeDestroy() {
+    if (this.transitionInterval) {
+      clearInterval(this.transitionInterval);
+    }
   }
 }
 </script>
@@ -89,17 +153,28 @@ export default {
 }
 
 .video-background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.video-background video {
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.video-player.active {
+  opacity: 1;
 }
 
 .A::before {
@@ -163,7 +238,8 @@ export default {
     width: 81vw;
     margin-bottom: 1.6rem;
     display: flex;
-    position: relative;
+    position: absolute;
+    bottom: 0;
 }
 
 .AADA, .AADB, .AADC, .AADD {
@@ -205,6 +281,7 @@ export default {
   }
 
   .AAD {
+    position: static;
     align-items: center;
     flex-direction: column;
   }
@@ -226,7 +303,7 @@ export default {
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, .3);
-    margin: 88px 0px 60px 0px;
+    margin: 88px 0px 88px 0px;
   }
 
   .AAA {
