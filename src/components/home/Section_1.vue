@@ -63,7 +63,6 @@ export default {
 
 .A {
   position: relative;
-
   height: 100vh;
   width: 100%;
   background-image: url('@/assets/HomeImgCpm/18220887_v1016-c-02.png');
@@ -94,6 +93,11 @@ export default {
   position: relative;
   z-index: 2;
   padding: 0 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .AAA {
