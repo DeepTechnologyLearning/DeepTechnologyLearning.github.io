@@ -182,6 +182,15 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .A{
+    height: auto;
+
+  }
+
+  .AA{
+    margin: 100px 0px 60px 0px;
+  }
+
   .AAA {
     font-size: 16px;
   }

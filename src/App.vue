@@ -195,6 +195,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 768px) {
+
+  #app{
+    &::before, &::after{
+      display: none;
+    }
+  }
+
   .nav-links {
     display: none;
   }
