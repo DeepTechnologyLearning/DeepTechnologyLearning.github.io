@@ -1,6 +1,19 @@
 <template>
   <section class="A">
     <div class="video-background">
+      <!-- Images pour mobile -->
+      <div class="mobile-background" v-if="images.length > 0">
+        <img 
+          v-for="(image, index) in images"
+          :key="image"
+          :ref="`image${index}`"
+          class="background-image"
+          :class="{ active: currentImageIndex === index }"
+          :src="require(`@/components/home/Section_1/ImgBg/${image}`)"
+          alt="Background"
+        >
+      </div>
+      <!-- Vidéos pour desktop -->
       <video 
         v-for="(video, index) in videos"
         :key="video"
@@ -87,10 +100,21 @@ export default {
     const videoContext = require.context('@/assets/HomeBgVOC', false, /\.(mp4)$/);
     const videos = importAll(videoContext);
     
+    let images = [];
+    try {
+      const imageContext = require.context('@/components/home/Section_1/ImgBg', false, /\.(jpg|jpeg|png|gif)$/);
+      images = importAll(imageContext);
+    } catch (error) {
+      console.warn('Le dossier ImgBg n\'a pas été trouvé ou est vide');
+    }
+    
     return {
       videos,
+      images,
       currentIndex: 0,
-      transitionInterval: null
+      currentImageIndex: 0,
+      transitionInterval: null,
+      imageInterval: null
     }
   },
   methods: {
@@ -109,14 +133,17 @@ export default {
       const nextIndex = (this.currentIndex + 1) % this.videos.length;
       const nextVideo = this.$refs[`video${nextIndex}`][0];
       
-      // Précharger et démarrer la prochaine vidéo
       try {
         await nextVideo.play();
-        // Attendre un court instant pour s'assurer que la vidéo est bien en lecture
         await new Promise(resolve => setTimeout(resolve, 100));
         this.currentIndex = nextIndex;
       } catch (error) {
         console.error('Erreur lors du changement de vidéo:', error);
+      }
+    },
+    switchToNextImage() {
+      if (this.images.length > 0) {
+        this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
       }
     }
   },
@@ -124,14 +151,24 @@ export default {
     // Démarrer la première vidéo
     await this.startVideo(0);
 
-    // Configurer la transition automatique
+    // Configurer la transition automatique des vidéos
     this.transitionInterval = setInterval(() => {
       this.switchToNextVideo();
-    }, 10000); // Changer toutes les 10 secondes
+    }, 10000);
+
+    // Configurer la transition automatique des images si elles existent
+    if (this.images.length > 0) {
+      this.imageInterval = setInterval(() => {
+        this.switchToNextImage();
+      }, 3500);
+    }
   },
   beforeDestroy() {
     if (this.transitionInterval) {
       clearInterval(this.transitionInterval);
+    }
+    if (this.imageInterval) {
+      clearInterval(this.imageInterval);
     }
   }
 }
@@ -153,13 +190,32 @@ export default {
 }
 
 .video-background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: 0;
+}
+
+.mobile-background {
+  display: none;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.background-image.active {
+  opacity: 1;
 }
 
 .video-player {
@@ -316,6 +372,15 @@ export default {
 
   .AAC {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-background {
+    display: block;
+  }
+  .video-player {
+    display: none;
   }
 }
 </style> 
