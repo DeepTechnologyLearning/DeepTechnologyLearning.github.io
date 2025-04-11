@@ -79,6 +79,11 @@
         </div>
       </div>
     </div>
+    <div class="button-wrapper">
+      <button class="transition-button">
+        Commencer votre parcours d'apprentissage !
+      </button>
+    </div>
   </section>
 </template>
 
@@ -174,7 +179,8 @@ export default {
 }
 </script>
 
-<style scoped >
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 .A {
   position: relative;
@@ -186,11 +192,10 @@ export default {
   text-align: center;
   color: #fff;
   margin: 0;
-  overflow: hidden;
 }
 
 .video-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -294,8 +299,7 @@ export default {
     width: 81vw;
     margin-bottom: 1.6rem;
     display: flex;
-    position: absolute;
-    bottom: 0;
+    
 }
 
 .AADA, .AADB, .AADC, .AADD {
@@ -381,6 +385,61 @@ export default {
   }
   .video-player {
     display: none;
+  }
+}
+
+.button-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.transition-button {
+  position: relative;
+  width: 50%;
+  height: 70px;
+  background-image: url('@/components/home/Section_2/ImgBg/1.jpg');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  color: white;
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transform: translateY(50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.transition-button:hover {
+  transform: translateY(45%);
+  box-shadow: 0 0 240px #1577E8;
+  filter: drop-shadow(0 0 240px #1577E8);
+}
+
+@media (max-width: 768px) {
+  .transition-button {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transition-button {
+    font-size: 16px;
   }
 }
 </style> 
