@@ -403,14 +403,14 @@ export default {
   position: relative;
   width: 50%;
   height: 70px;
-  background-image: url('@/components/home/Section_2/ImgBg/1.jpg');
+  background-image: url('@/components/home/Section_1/ImgBg/1.jpg');
   background-size: cover;
   background-position: center;
   border: none;
   color: white;
   font-family: 'Staatliches', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
