@@ -67,10 +67,12 @@
 
         <!-- Terminal -->
         <div class="terminal" v-if="activeFile === 'deep-tech-learning.js'">
-          <div class="terminal-line" v-for="(log, i) in terminalLogs" :key="i">
-            <span class="terminal-prefix">[DLT]</span>
-            <span :style="{ color: colors[i % colors.length] }">{{ log }}</span>
-            <span class="spinner"></span>
+          <div class="terminal-lines">
+            <div class="terminal-line" :class="log.type" v-for="(log, i) in terminalLogs" :key="i">
+              <span class="terminal-prefix">[DLT]</span>
+              <span>{{ log.text }}</span>
+              <span class="spinner" :class="log.type"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -94,27 +96,21 @@ export default {
       filesContent: {
         'deep-tech-learning.js': [
           "🎯 Nous mettons à votre disposition les meilleurs cours en ligne 🎯",
-          "",
           "📌 Quel que soit le domaine, nous couvrons tout :",
-          "",
           "    ✅ Programmation bas niveau 🖥️",
           "    ✅ Ingénierie logicielle et prompts ⚙️🤖",
           "    ✅ Science des données & Deep Learning 📊🧠",
           "    ✅ IA et automatisation avancée 🚀",
-          "",
           "✨ Explorez les horizons du futur avec Deep Tech learning ! ✨",
           "💡 Une expertise partagée pour libérer votre potentiel.",
-          "",
           "🌍 Rejoignez Deep Tech learning 🌍",
-          "🚀 Plateforme d’apprentissage dédiée à l’IA et l’ingénierie logicielle 🚀",
-          "",
+          "🚀 Plateforme d'apprentissage dédiée à l'IA et l'ingénierie logicielle 🚀",
           "🎓 Apprenez gratuitement avec nous ! 🎓",
           "📢 Chaque jour, des conseils, tutos et ressources GRATUITES :",
           "    🔹 LinkedIn 🔗",
           "    🔹 Instagram 📸",
           "    🔹 Twitter 🐦",
           "    🔹 Youtube 🐦",
-          "",
           "💡 Pour progresser en IA & ingénierie logicielle 💡",
           "📈 Vous voulez aller plus loin ? 📈",
           "🔥 Formations complètes disponibles sur :",
@@ -122,20 +118,123 @@ export default {
           "    🎯 Teachable",
           "    🎯 Skool",
           "    🎯 ...et d'autres en cours",
-          "",
-          "💻📚 Rejoignez-nous et montez en compétence dès aujourd’hui ! 💻📚",
+          "💻📚 Rejoignez-nous et montez en compétence dès aujourd'hui ! 💻📚",
           "💬 Prêt à booster vos compétences ?",
           "👉 Suivez-nous dès maintenant ! 🚀🔥"
         ],
         'liberez-votre-potentiel.js': [
-          "🚀 Plongez dans une aventure d’apprentissage qui révolutionnera votre maîtrise des technologies.",
+          "🚀 Plongez dans une aventure d'apprentissage ","Qui révolutionnera votre maîtrise des technologies.",
           "",
-          "🎯 Développez vos compétences grâce à nos formations en ligne de haut niveau, conçues pour accélérer votre carrière et maximiser votre potentiel.",
+          "🎯 Développez vos compétences grâce à nos formations en ligne de haut niveau,","Conçues pour accélérer votre carrière ","Et maximiser votre potentiel.",
           "",
-          "💡 Chez Deep Intelli Tech, nous savons que choisir la bonne plateforme d’apprentissage est une étape essentielle. C’est pourquoi des milliers d’apprenants à travers le monde nous font confiance pour se former aux technologies de demain."
+          "💡 Chez Deep Intelli Tech, ","Nous savons que choisir la bonne plateforme d'apprentissage","Est une étape essentielle. ","C'est pourquoi des milliers d'apprenants à travers le monde","Nous font confiance pour se former aux technologies de demain."
         ]
       },
-      terminalText: `Apprentissage\nTechnologique\nProfond\n\nApprennez n’importe quelle technologies de manière clair, consise et approfondie!\n\ndeveloppement web\nentreprise\ningénierie front end UI/UX\ningénierie back end\ningénierie full stack\njavascript\nreact\nvueJS\nangular\nhTML\nCSS\nfigma\nà propos\nservice\nabonnement et tarifs\n\ngestion de projet\nprogrammation\nPMP Certification\u2028Agile et Scrum\u2028PRINCE2\u2028Gestion des risques\u2028Lean Six Sigma\njava\njavascript\npython\nC\nC++\nc#\ndata structure\nalgorithmies\noOP\nScience des Données et bi\nsciences des données\nCloud Computing\nAnalyse de données avec Excel\u2028SQL\u2028Python pour la science des données\u2028R pour la science des données\u2028Visualisation de données avec Tableau\u2028Power BI\nScience des données\nPython\nMachine Learning\nChatGPT\nDeep Learning\nAWS\u2028Microsoft Azure\u2028Google Cloud Platform\u2028Cloud hybride\ndevops\nAI & machine learning\nDocker\u2028Kubernetes\u2028Jenkins\u2028Ansible\u2028Chef\nApprentissage profond (Deep Learning)\u2028Traitement du langage naturel (NLP)\u2028Réseaux de neurones\u2028IA pour les entreprises\nCybersécurité\nMarketing Digital\nHacking éthique\u2028Sécurité des réseaux\u2028Sécurité des applications\u2028Gestion des risques\u2028Conformité\nSEO (Optimisation pour les moteurs de recherche)\u2028Marketing sur les réseaux sociaux\u2028Publicité par e-mail\u2028Marketing de contenu\u2028Publicité PPC (Pay-Per-Click)\nMéthodologies Agiles et Scrum\nSalesforce\nScrum Master\u2028Product Owner\u2028Kanban\u2028SAFe (Scaled Agile Framework)\nAdministration Salesforce\u2028Développement Salesforce\u2028Consultant en implémentation\nGestion de la Qualité\u2028Lean Six Sigma\u2028ISO\u2028Gestion des processus\nDéveloppement Logiciel\nDéveloppement Full-Stack\u2028Java\u2028Python\u2028JavaScript\u2028C#\u2028Développement mobile`
+      terminalText: `Deep Technology Learning - 
+Votre Apprentissage profond de la technologie vas commenencer dans un instant ...
+
+---
+
+1. Développement Web
+Frontend
+
+HTML, CSS, JavaScript
+
+Frameworks : React, Vue.js, Angular, Svelte
+
+Outils : Webpack, Vite, Tailwind CSS
+
+Backend
+
+Langages : Node.js, Python (Django, Flask), PHP (Laravel), Ruby on Rails, Go, Java (Spring)
+
+Bases de données : MySQL, PostgreSQL, MongoDB, Redis
+
+Fullstack & DevOps
+
+Frameworks Fullstack : Next.js, Nuxt.js, Meteor
+
+CI/CD : GitHub Actions, Jenkins, Docker, Kubernetes
+
+2. Intelligence Artificielle & Machine Learning
+Fondamentaux
+
+Langages : Python, R, Julia
+
+Bibliothèques : TensorFlow, PyTorch, scikit-learn, Keras
+
+Applications
+
+Vision par ordinateur : OpenCV, YOLO, Detectron2
+
+NLP (traitement du langage) : spaCy, NLTK, Transformers (HuggingFace)
+
+IA générative : GPT, DALL·E, Stable Diffusion, Midjourney
+
+Approches avancées
+
+Reinforcement learning, Federated Learning, AutoML
+
+Fine-tuning et Prompt Engineering
+
+3. Cybersécurité
+Sécurité offensive (red team)
+
+Pentesting : Metasploit, Nmap, Burp Suite, Wireshark
+
+Ethical hacking, reverse engineering
+
+Sécurité défensive (blue team)
+
+SIEM : Splunk, Wazuh, ELK Stack
+
+Firewalls, IDS/IPS, endpoint protection
+
+Sécurité réseau et cryptographie
+
+Protocoles : TLS, SSH, IPsec
+
+Chiffrement : AES, RSA, ECC, Zero Trust
+
+Tendances futures
+
+Sécurité post-quantique, IA pour la détection d'intrusion
+
+4. Développement Mobile
+Natif
+
+iOS : Swift, SwiftUI
+
+Android : Kotlin, Jetpack Compose
+
+Cross-platform
+
+React Native, Flutter, Ionic, Xamarin
+
+Backend mobile
+
+Firebase, Supabase, Appwrite
+
+API REST et GraphQL
+
+5. Cloud Computing & Infonuagique
+Fournisseurs cloud
+
+AWS, Azure, Google Cloud Platform
+
+Conteneurisation & Orchestration
+
+Docker, Kubernetes, Helm
+
+Serverless & microservices
+
+AWS Lambda, Azure Functions, Cloudflare Workers
+
+Architecture microservices, gRPC, API Gateway
+
+DevOps Cloud
+
+Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
     };
   },
   methods: {
@@ -177,13 +276,87 @@ export default {
     },
     runTerminalLogs() {
       const lines = this.terminalText.split("\n");
+      let currentCategory = '';
+      let currentSubCategory = '';
+
       const addLine = () => {
         if (this.currentLogIndex < lines.length) {
-          this.terminalLogs.push(lines[this.currentLogIndex]);
+          const line = lines[this.currentLogIndex].trim();
+          
+          // Détection des catégories principales (commencent par un chiffre suivi d'un point)
+          if (/^\d+\./.test(line)) {
+            currentCategory = line;
+            currentSubCategory = '';
+            this.terminalLogs.push({
+              text: line,
+              type: 'main-category'
+            });
+            this.currentLogIndex++;
+            setTimeout(addLine, 1500);
+            return;
+          }
+          
+          // Détection des sous-catégories (commencent par une majuscule et ne sont pas vides)
+          if (line && line[0] === line[0].toUpperCase() && !/^\d+\./.test(line) && !line.includes(':')) {
+            currentSubCategory = line;
+            this.terminalLogs.push({
+              text: line,
+              type: 'sub-category'
+            });
+            this.currentLogIndex++;
+            setTimeout(addLine, 300);
+            return;
+          }
+
+          // Pour les éléments avec deux-points (sous-sous-catégories)
+          if (line && line.includes(':')) {
+            const [title, content] = line.split(':').map(item => item.trim());
+            this.terminalLogs.push({
+              text: title + ':',
+              type: 'sub-sub-category'
+            });
+            
+            // Traitement des éléments séparés par des virgules
+            if (content) {
+              const items = content.split(',').map(item => item.trim());
+              items.forEach((item, index) => {
+                setTimeout(() => {
+                  this.terminalLogs.push({
+                    text: item,
+                    type: 'sub-sub-category-item'
+                  });
+                }, index * 150);
+              });
+              setTimeout(() => {
+                this.currentLogIndex++;
+                setTimeout(addLine, items.length * 150 + 100);
+              }, items.length * 150);
+            } else {
+              this.currentLogIndex++;
+              setTimeout(addLine, 150);
+            }
+            return;
+          }
+
+          // Pour les éléments vides (sauts de ligne)
+          if (!line) {
+            this.terminalLogs.push({
+              text: '',
+              type: 'empty'
+            });
+            this.currentLogIndex++;
+            setTimeout(addLine, 100);
+            return;
+          }
+
+          // Pour les autres éléments
+          this.terminalLogs.push({
+            text: line,
+            type: 'sub-sub-category-item'
+          });
           this.currentLogIndex++;
-          setTimeout(addLine, 300);
+          setTimeout(addLine, 150);
         } else {
-          this.terminalLogs = [];
           this.currentLogIndex = 0;
           setTimeout(addLine, 1000);
         }
@@ -202,117 +375,160 @@ export default {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  min-width: 100%;
+  width: 100%;
   text-align: left;
   color: #fff;
   margin: 0;
   overflow: hidden;
   background-color: #000;
-  padding: 4rem 0;
+  padding: 0;
   z-index: 0;
 }
 
 .cursor-editor {
   font-family: 'Courier New', Courier, monospace;
-  background-color: #1e1e1e;
+  background-color: #0a0a0a;
   color: #d4d4d4;
-  height: 70vh;
-  min-width: 70%;
-  max-width: 70%;
+  width: 100%;
+  height: auto;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 .window-bar {
   display: flex;
   align-items: center;
   padding: 6px 12px;
-  background-color: #2c2c2c;
-  border-bottom: 1px solid #444;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
 }
+
 .window-buttons {
   display: flex;
   gap: 6px;
 }
+
 .btn {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
+
 .red { background-color: #ff5f56; }
 .yellow { background-color: #ffbd2e; }
 .green { background-color: #27c93f; }
+
 .menu-bar {
   display: flex;
-  gap: 20px;
-  margin-left: 30px;
-  color: #ccc;
-  font-size: 13px;
+  gap: 10px;
+  margin-left: 15px;
+  color: #888;
+  font-size: 12px;
+  flex-wrap: wrap;
 }
+
 .editor-layout {
   display: flex;
   flex: 1;
   overflow: hidden;
-}
-.icon-sidebar {
-  width: 50px;
-  background-color: #252526;
-  padding-top: 10px;
-  border-right: 1px solid #444;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  background-color: #0a0a0a;
 }
-.icon { color: #888; font-size: 18px; }
+
+.icon-sidebar {
+  display: none;
+  width: 50px;
+  background-color: #111;
+  padding-top: 10px;
+  border-right: 1px solid #222;
+}
+
+.icon {
+  color: #666;
+  font-size: 18px;
+  margin: 8px 0;
+  display: block;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.icon:hover {
+  color: #fff;
+}
+
 .file-explorer {
-  width: 25%;
-  background-color: #1e1e1e;
+  width: 100%;
+  background-color: #0a0a0a;
   padding: 10px;
-  border-right: 1px solid #444;
+  border-right: none;
+  border-bottom: 1px solid #222;
 }
+
 .file-title {
   font-size: 12px;
-  color: #888;
+  color: #666;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
 .file {
   padding: 6px 10px;
-  color: #ddd;
+  color: #999;
   font-size: 13px;
   cursor: pointer;
+  transition: all 0.2s;
 }
+
 .file.active, .file:hover {
-  background-color: #333;
+  background-color: #222;
+  color: #fff;
 }
+
 .clickable-file {
   animation: pulse 1.5s infinite;
 }
+
 @keyframes pulse {
   0% { background-color: #1e1e1e; }
   50% { background-color: #333333; }
   100% { background-color: #1e1e1e; }
 }
+
 .main-editor {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  background-color: #0a0a0a;
 }
+
 .tab-bar {
-  background-color: #2d2d2d;
+  background-color: #111;
   padding: 5px 10px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #222;
 }
+
 .tab {
-  color: #fff;
+  color: #999;
   font-size: 13px;
 }
+
 .code-area {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
-  background-color: #1e1e1e;
+  background-color: #0a0a0a;
+  font-size: 12px;
 }
+
 .code-line {
   white-space: pre-wrap;
   margin: 0;
@@ -321,34 +537,90 @@ export default {
   line-height: 1.4;
   display: flex;
 }
+
 .line-number {
-  color: #666;
+  color: #444;
   width: 30px;
   text-align: right;
   margin-right: 10px;
   user-select: none;
 }
+
 .terminal {
-  background-color: #111;
-  padding: 10px 20px;
-  font-size: 12px;
-  border-top: 1px solid #444;
-  color: #ccc;
-  height: 180px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  background-color: #0a0a0a;
+  padding: 10px;
+  font-size: 11px;
+  border-top: 1px solid #222;
+  color: #888;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
 }
+
+.terminal-lines {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
 .terminal-line {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
   margin-bottom: 2px;
+  animation: appear 0.2s ease-out forwards;
+  word-break: break-word;
 }
+
+.terminal-line.main-category {
+  font-size: 13px;
+  color: #4CAF50;
+}
+
+.terminal-line.sub-category {
+  font-size: 12px;
+  margin-left: 10px;
+  color: #2196F3;
+}
+
+.terminal-line.sub-sub-category {
+  font-size: 11px;
+  margin-left: 20px;
+  color: #FFC107;
+}
+
+.terminal-line.sub-sub-category-item {
+  font-size: 11px;
+  margin-left: 30px;
+  color: #999;
+}
+
+.terminal-line.empty {
+  height: 10px;
+  animation: none;
+}
+
+.terminal-line.empty .terminal-prefix,
+.terminal-line.empty .spinner {
+  display: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .terminal-prefix {
   color: #0ff;
   font-weight: bold;
 }
+
 .spinner {
   display: inline-block;
   width: 10px;
@@ -358,31 +630,39 @@ export default {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
+.spinner.main-category {
+  border-top-color: #4CAF50;
+}
+
+.spinner.sub-category {
+  border-top-color: #2196F3;
+}
+
+.spinner.sub-sub-category {
+  border-top-color: #FFC107;
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
 .empty-editor {
   text-align: center;
-  padding-top: 60px;
-}
-.empty-editor h1 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #f0f0f0;
-}
-.empty-editor p {
-  font-size: 14px;
-  color: #aaa;
-  margin-top: 10px;
+  padding: 30px 20px;
+  color: #888;
 }
 
-@keyframes scroll-up {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.empty-editor h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.empty-editor p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .terminal-lines::-webkit-scrollbar,
@@ -394,5 +674,133 @@ export default {
 .file-item {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Styles spécifiques pour mobile */
+@media (max-width: 767px) {
+  .Section_2 {
+    padding: 0;
+  }
+
+  .cursor-editor {
+    margin-top: 0;
+    min-height: 100vh;
+  }
+
+  .editor-layout {
+    flex-direction: column;
+  }
+
+  .icon-sidebar {
+    display: none;
+  }
+
+  .file-explorer {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-bar {
+    gap: 8px;
+    margin-left: 10px;
+    font-size: 11px;
+  }
+
+  .terminal {
+    height: 150px;
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .terminal-line.main-category {
+    font-size: 12px;
+  }
+
+  .terminal-line.sub-category {
+    font-size: 11px;
+    margin-left: 8px;
+  }
+
+  .terminal-line.sub-sub-category {
+    font-size: 10px;
+    margin-left: 16px;
+  }
+
+  .terminal-line.sub-sub-category-item {
+    font-size: 10px;
+    margin-left: 24px;
+  }
+
+  .empty-editor {
+    padding: 20px 10px;
+  }
+
+  .empty-editor h1 {
+    font-size: 20px;
+  }
+
+  .empty-editor p {
+    font-size: 12px;
+  }
+}
+
+/* Media Queries pour les tablettes */
+@media (min-width: 768px) {
+  .Section_2 {
+    padding: 0;
+  }
+
+  .cursor-editor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 70px auto;
+  }
+
+  .editor-layout {
+    flex-direction: row;
+  }
+
+  .icon-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 5px;
+  }
+
+  .file-explorer {
+    width: 25%;
+    border-right: 1px solid #444;
+    border-bottom: none;
+  }
+
+  .terminal {
+    height: 15rem;
+  }
+}
+
+/* Media Queries pour les grands écrans */
+@media (min-width: 1024px) {
+  .cursor-editor {
+    margin-top: 70px;
+    width: 80%;
+  }
+
+  .terminal {
+    height: 18rem;
+  }
+}
+
+/* Media Queries pour les très grands écrans */
+@media (min-width: 1440px) {
+  .cursor-editor {
+    margin-top: 70px;
+    width: 70%;
+  }
+
+  .terminal {
+    height: 20rem;
+  }
 }
 </style> 
