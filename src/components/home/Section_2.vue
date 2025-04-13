@@ -397,6 +397,7 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #222;
 }
 
 .window-bar {
