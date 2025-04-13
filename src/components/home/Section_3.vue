@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       stats: [
-        { number: '1000+', label: 'Étudiants Formés' },
-        { number: '50+', label: 'Cours Disponibles' },
+       
+        { number: '256', label: 'Sections de cours Disponibles' },
         { number: '98%', label: 'Taux de Satisfaction' },
         { number: '24/7', label: 'Support Disponible' }
       ]
