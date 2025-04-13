@@ -683,7 +683,7 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
   }
 
   .cursor-editor {
-    margin-top: 0;
+    margin-top: 70px;
     min-height: 100vh;
   }
 
