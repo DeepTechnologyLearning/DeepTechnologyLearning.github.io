@@ -59,17 +59,19 @@
             <p>Une plateforme de formation pensée pour l'excellence.</p>
             <p>Rejoignez une communauté d'innovateurs et de créateurs.</p>
           </div>
-          <pre v-else v-for="(line, i) in visibleLines" :key="i" class="code-line">
-            <span class="line-number">{{ i + 1 }}</span>
-            <span v-html="line"></span>
-          </pre>
+          <template v-if="activeFile">
+            <pre v-for="(line, i) in visibleLines" :key="i" class="code-line">
+              <span class="line-number">{{ i + 1 }}</span>
+              <span v-html="line"></span>
+            </pre>
+          </template>
         </div>
 
         <!-- Terminal -->
         <div class="terminal" v-if="activeFile === 'deep-tech-learning.js'">
           <div class="terminal-lines">
             <div class="terminal-line" :class="log.type" v-for="(log, i) in terminalLogs" :key="i">
-              <span class="terminal-prefix">[DLT]</span>
+            <span class="terminal-prefix">[DLT]</span>
               <span>{{ log.text }}</span>
               <span class="spinner" :class="log.type"></span>
             </div>
