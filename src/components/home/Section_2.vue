@@ -129,7 +129,7 @@ export default {
           "",
           "🎯 Développez vos compétences grâce à nos formations en ligne de haut niveau,","Conçues pour accélérer votre carrière ","Et maximiser votre potentiel.",
           "",
-          "💡 Chez Deep Intelli Tech, ","Nous savons que choisir la bonne plateforme d'apprentissage","Est une étape essentielle. ","C'est pourquoi des milliers d'apprenants à travers le monde","Nous font confiance pour se former aux technologies de demain."
+          "💡 Chez Deep Technology Learning, ","Nous savons que choisir la bonne plateforme d'apprentissage","Est une étape essentielle. ","C'est pourquoi des milliers d'apprenants à travers le monde","Nous font confiance pour se former aux technologies de demain."
         ]
       },
       terminalText: `Deep Technology Learning - 
