@@ -536,6 +536,7 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
   font-size: 14px;
   line-height: 1.4;
   display: flex;
+  align-items: flex-start;
 }
 
 .line-number {
@@ -544,6 +545,8 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
   text-align: right;
   margin-right: 10px;
   user-select: none;
+  flex-shrink: 0;
+  padding-top: 2px;
 }
 
 .terminal {
@@ -742,6 +745,18 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
 
   .empty-editor p {
     font-size: 12px;
+  }
+
+  .code-line {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .line-number {
+    width: 25px;
+    margin-right: 8px;
+    font-size: 11px;
+    padding-top: 1px;
   }
 }
 
