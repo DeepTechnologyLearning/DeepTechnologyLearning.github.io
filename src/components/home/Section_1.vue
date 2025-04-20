@@ -135,13 +135,24 @@ export default {
       }
     },
     async switchToNextVideo() {
+      const currentVideo = this.$refs[`video${this.currentIndex}`][0];
       const nextIndex = (this.currentIndex + 1) % this.videos.length;
       const nextVideo = this.$refs[`video${nextIndex}`][0];
       
       try {
+        // Préparer la vidéo suivante
+        nextVideo.currentTime = 0;
         await nextVideo.play();
-        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        // Ajouter un délai pour la transition
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Mettre à jour l'index actuel
         this.currentIndex = nextIndex;
+        
+        // Arrêter la vidéo précédente après la transition
+        currentVideo.pause();
+        currentVideo.currentTime = 0;
       } catch (error) {
         console.error('Erreur lors du changement de vidéo:', error);
       }
@@ -231,7 +242,8 @@ export default {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
 }
 
 .video-player.active {

@@ -61,9 +61,9 @@
           </div>
           <template v-if="activeFile">
             <pre v-for="(line, i) in visibleLines" :key="i" class="code-line">
-              <span class="line-number">{{ i + 1 }}</span>
-              <span v-html="line"></span>
-            </pre>
+            <span class="line-number">{{ i + 1 }}</span>
+            <span v-html="line"></span>
+          </pre>
           </template>
         </div>
 
@@ -654,13 +654,17 @@ Terraform, Ansible, CI/CD pipelines, monitoring (Prometheus, Grafana)`
 }
 
 .empty-editor {
+  font-family: 'Lexend Deca', sans-serif;
+  text-transform: uppercase;
   text-align: center;
   padding: 30px 20px;
   color: #888;
+  
 }
 
 .empty-editor h1 {
-  font-size: 24px;
+  font-size: 30px;
+  text-align: center;
   color: #fff;
   margin-bottom: 20px;
 }
