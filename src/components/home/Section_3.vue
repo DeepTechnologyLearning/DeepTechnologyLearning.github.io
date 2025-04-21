@@ -24,40 +24,62 @@
                   <span class="button-text">En savoir +</span>
                 </button>
                 <div class="swipe">
-                  <button class="nav-button prev" @click="previousSousDomaine(domaineIndex)">
+                  <button 
+                    class="nav-button prev" 
+                    @click="previousSlide(domaineIndex)"
+                    :disabled="isTransitioning"
+                  >
                     <span class="nav-icon">←</span>
                   </button>
-                  <button class="nav-button next" @click="nextSousDomaine(domaineIndex)">
+                  <button 
+                    class="nav-button next" 
+                    @click="nextSlide(domaineIndex)"
+                    :disabled="isTransitioning"
+                  >
                     <span class="nav-icon">→</span>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="sdomaines-wrapper" :style="getCarouselStyle(domaineIndex)">
-            <div class="B" v-for="sdomaine in domaine.sdomaines" :key="sdomaine.id">
-              <div class="card-scategorie">
-                <div class="top">
-                  <div class="left">
-                    <h1 class="card-scategorie-number">{{ sdomaine.id }}</h1>
-                  </div>
-                  <div class="right">
-                    <h1 class="card-scategorie-title">{{ sdomaine.nom }}</h1>
-                    <p class="card-scategorie-description">MAÎTRISEZ LES FONDAMENTAUX ET LES CONCEPTS AVANCÉS DU DÉVELOPPEMENT</p>
+          <div class="carousel-container">
+            <carousel 
+              :settings="carouselSettings"
+              :breakpoints="{
+                768: {
+                  itemsToShow: 1.5,
+                  paginationEnabled: true
+                },
+                1024: {
+                  itemsToShow: 1.5,
+                  paginationEnabled: true
+                }
+              }"
+              :ref="`carousel-${domaineIndex}`"
+            >
+              <slide v-for="sdomaine in domaine.sdomaines" :key="sdomaine.id">
+                <div class="B">
+                  <div class="card-scategorie">
+                    <div class="top">
+                      <div class="left">
+                        <h1 class="card-scategorie-number">{{ sdomaine.id }}</h1>
+                      </div>
+                      <div class="right">
+                        <h1 class="card-scategorie-title">{{ sdomaine.nom }}</h1>
+                        <p class="card-scategorie-description">{{ sdomaine['des-n'] }}</p>
+                      </div>
+                    </div>
+                    <div class="card-scategorie-description-content">
+                      <div class="description-item">{{ sdomaine['des-n-1'] }}</div>
+                      <div class="description-item">{{ sdomaine['des-n-2'] }}</div>
+                      <div class="description-item">{{ sdomaine['des-n-3'] }}</div>
+                      <div class="description-item" v-if="sdomaine['des-n-4']">{{ sdomaine['des-n-4'] }}</div>
+                    </div>
+                    <span class="card-scategorie-description-content-title">{{ sdomaine.note }}</span>
                   </div>
                 </div>
-                <div class="card-scategorie-description-content">
-                  <ul>
-                    <li v-for="(tech, idx) in sdomaine['des-n']" :key="idx">{{ tech }}</li>
-                    <li>{{ sdomaine['des-n-1'] }}</li>
-                    <li>{{ sdomaine['des-n-2'] }}</li>
-                    <li>{{ sdomaine['des-n-3'] }}</li>
-                    <li v-if="sdomaine['des-n-4']">{{ sdomaine['des-n-4'] }}</li>
-                  </ul>
-                </div>
-                <span class="card-scategorie-description-content-title">{{ sdomaine.note }}</span>
-              </div>
-            </div>
+              </slide>
+            </carousel>
           </div>
         </div>
       </div>
@@ -67,36 +89,66 @@
 
 <script>
 import domainesData from './Section_3/data/data.json'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'Section_3',
+  components: {
+    Carousel,
+    Slide
+  },
   data() {
     return {
       domainesData: domainesData,
-      currentSousDomaineIndices: domainesData.map(() => 0)
+      currentSousDomaineIndices: domainesData.map(() => 0),
+      isTransitioning: false,
+      carouselSettings: {
+        itemsToShow: 1.5,
+        snapAlign: 'center',
+        wrapAround: true,
+        transition: 500,
+        paginationEnabled: true,
+        paginationActiveColor: '#4d9fff',
+        paginationColor: 'rgba(255, 255, 255, 0.3)',
+        paginationSize: 8,
+        paginationPadding: 4
+      },
+      carouselRefs: {}
+    }
+  },
+  computed: {
+    getVisibleItems() {
+      return (domaineIndex) => {
+        const items = this.domainesData[domaineIndex].sdomaines;
+        const currentIndex = this.currentSousDomaineIndices[domaineIndex];
+        const length = items.length;
+
+        let visibleItems = [];
+        
+        // Ajouter l'élément précédent
+        visibleItems.push(items[(currentIndex - 1 + length) % length]);
+        
+        // Ajouter l'élément courant
+        visibleItems.push(items[currentIndex]);
+        
+        // Ajouter l'élément suivant
+        visibleItems.push(items[(currentIndex + 1) % length]);
+
+        return visibleItems;
+      };
     }
   },
   methods: {
-    nextSousDomaine(domaineIndex) {
-      const maxIndex = this.domainesData[domaineIndex].sdomaines.length - 1
-      if (this.currentSousDomaineIndices[domaineIndex] < maxIndex) {
-        this.currentSousDomaineIndices[domaineIndex]++
-      } else {
-        this.currentSousDomaineIndices[domaineIndex] = 0
+    nextSlide(domaineIndex) {
+      const carousel = this.$refs[`carousel-${domaineIndex}`];
+      if (carousel) {
+        carousel.goToPage(carousel.currentPage + 1);
       }
     },
-    previousSousDomaine(domaineIndex) {
-      const maxIndex = this.domainesData[domaineIndex].sdomaines.length - 1
-      if (this.currentSousDomaineIndices[domaineIndex] > 0) {
-        this.currentSousDomaineIndices[domaineIndex]--
-      } else {
-        this.currentSousDomaineIndices[domaineIndex] = maxIndex
-      }
-    },
-    getCarouselStyle(domaineIndex) {
-      const translateX = -this.currentSousDomaineIndices[domaineIndex] * 370 // 350px width + 20px gap
-      return {
-        transform: `translateX(${translateX}px)`
+    previousSlide(domaineIndex) {
+      const carousel = this.$refs[`carousel-${domaineIndex}`];
+      if (carousel) {
+        carousel.goToPage(carousel.currentPage - 1);
       }
     }
   }
@@ -162,6 +214,11 @@ export default {
   transition: all 0.3s ease;
 }
 
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .nav-icon {
   font-family: 'Mate SC', serif;
   color: #4d9fff;
@@ -190,36 +247,94 @@ export default {
 .caroussel-item {
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   position: relative;
   overflow: hidden;
 }
 
-.A {
-  flex-shrink: 0;
-  width: 300px;
-}
-
-.sdomaines-wrapper {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
+.carousel-container {
   position: relative;
-  margin-left: 20px;
+  width: 720px;
+
 }
 
 .B {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 350px;
-  height: 390px;
+  height: 500px;
   background-image: url('@/components/home/Section_3/ImgBg/15.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.VueCarousel-slide {
+  padding: 0 10px;
+}
+
+.VueCarousel-pagination {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.VueCarousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.VueCarousel-dot--active {
+  background-color: #4d9fff;
+  transform: scale(1.2);
+}
+
+.VueCarousel-navigation-button {
+  color: #4d9fff;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.VueCarousel-navigation-button:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.VueCarousel-navigation-button:focus {
+  outline: none;
+}
+
+.VueCarousel-navigation-next {
+  right: 20px;
+}
+
+.VueCarousel-navigation-prev {
+  left: 20px;
+}
+
+.VueCarousel {
+  position: relative;
+  width: 100%;
+}
+
+.VueCarousel-wrapper {
+  width: 100%;
+  position: relative;
   overflow: hidden;
 }
 
@@ -337,16 +452,16 @@ h1 {
   }
 
   .features-list li {
-    font-size: 0.9rem;
+    font-size: 0..9rem;
   }
 }
 
 .card-scategorie {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
 }
 
 .top {
@@ -390,11 +505,27 @@ h1 {
 }
 
 .card-scategorie-description-content {
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: #000;
-  margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding: 0;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.description-item {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  padding-left: 8px;
+  position: relative;
+}
+
+.description-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4a90e2;
 }
 
 .card-scategorie-description-content-title {

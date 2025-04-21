@@ -8,32 +8,17 @@
         {
           "id": 1,
           "nom": "Programmation avancée",
-          "des-n": [
-            "Python", "JavaScript", "Java", "C++", "Rust"
-          ],
-          "des-n-1": "🔹Conception d’algorithmes et structures de données avancées",
-          "des-n-2": "🔹Bonnes pratiques de clean code, DRY, SOLID",
-          "des-n-3": "🔹Résolution de problèmes complexes et optimisation du code",
+          "des-n": "💡 Maîtrisez les fondamentaux et les concepts avancés du développement",
+          "des-n-1": "🔹 Langages clés : Python, JavaScript, Java, C++, Rust…",
+          "des-n-2": "🔹Conception d’algorithmes et structures de données avancées",
+          "des-n-3": "🔹Bonnes pratiques de clean code, DRY, SOLID",
+          "des-n-4": "🔹Résolution de problèmes complexes et optimisation du code",
           "note": "📌 Bénéfice : Une base technique solide pour évoluer vers tous les domaines du numérique."
         },
         {
           "id": 2,
-          "nom": "Intelligence Artificielle & Machine Learning",
-          "des-n": [
-            "TensorFlow", "PyTorch", "Scikit-Learn"
-          ],
-          "des-n-1": "🔹Concepts de Machine Learning et Deep Learning",
-          "des-n-2": "🔹Outils et frameworks : TensorFlow, PyTorch, Scikit-Learn",
-          "des-n-3": "🔹Entraînement et optimisation de modèles avec des jeux de données réels",
-          "des-n-4": "🔹Déploiement d’IA dans des applications concrètes et industrielles",
-          "note": "📌 Bénéfice : Devenez un expert dans l’IA et l’automatisation."
-        },
-        {
-          "id": 3,
           "nom": "Développement Fullstack",
-          "des-n": [
-            "React", "Vue.js", "Angular", "Node.js", "Django"
-          ],
+          "des-n": "💡 Construisez des applications web performantes et modernes",
           "des-n-1": "🔹Développement Front-end & Back-end : React, Vue.js, Angular, Node.js, Django…",
           "des-n-2": "🔹Création d’interfaces ergonomiques et interactives (UX/UI)",
           "des-n-3": "🔹Développement et sécurisation des API et bases de données",
@@ -41,11 +26,19 @@
           "note": "📌 Bénéfice : Une polyvalence essentielle pour le développement web moderne."
         },
         {
+          "id": 3,
+          "nom": "Développement Mobile",
+          "des-n": "💡Créez des applications performantes pour smartphones et tablettes",
+          "des-n-1": "🔹Développement natif : Android (Kotlin, Java) & iOS (Swift)",
+          "des-n-2": "🔹Technologies multiplateformes : Flutter, React Native",
+          "des-n-3": "🔹Optimisation des performances et de l’expérience utilisateur",
+          "des-n-4": "🔹Intégration des API et exploitation des fonctionnalités mobiles avancées",
+          "note": "📌 Bénéfice : Une compétence essentielle dans un monde mobile-first."
+        },
+        {
           "id": 4,
           "nom": "Ingénierie logicielle",
-          "des-n": [
-            "Architecture logicielle", "Design patterns", "Scrum", "Kanban", "DevOps"
-          ],
+          "des-n":"💡 Concevez des architectures logicielles robustes et évolutives",
           "des-n-1": "🔹Principes d’architecture logicielle et design patterns",
           "des-n-2": "🔹Méthodologies agiles : Scrum, Kanban, DevOps",
           "des-n-3": "🔹Gestion de projet et optimisation des workflows",
@@ -57,93 +50,81 @@
   ,
     {
       "id": 2,
-      "domaines": "Maîtriser la Programmation et le Développement",
+      "domaines": "Explorer l’Intelligence Artificielle et l’Automatisation",
       "description": "💡 Posez des bases solides et construisez des applications performantes",
       "note": "📌 Pourquoi ? Une excellente base technique vous ouvrira toutes les portes du développement logiciel et web.",
       "sdomaines": [
         {
           "id": 5,
-          "nom": "Cloud Computing & DevOps",
-          "des-n": [
-            "AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform"
-          ],
-          "des-n-1": "🔹Services cloud : AWS, Azure, Google Cloud",
-          "des-n-2": "🔹Automatisation des déploiements avec Docker, Kubernetes, Terraform",
-          "des-n-3": "🔹Intégration et déploiement continu (CI/CD)",
-          "des-n-4": "🔹Optimisation des infrastructures pour la scalabilité et la résilience",
-          "note": "📌 Bénéfice : Des compétences indispensables pour l’ère du cloud."
+          "nom": "Intelligence Artificielle & Machine Learning 🤖",
+          "des-n": "💡 Créez des solutions intelligentes et automatisées",
+          "des-n-1": "🔹Concepts de Machine Learning et Deep Learning",
+          "des-n-2": "🔹Outils et frameworks : TensorFlow, PyTorch, Scikit-Learn",
+          "des-n-3": "🔹Entraînement et optimisation de modèles avec des jeux de données réels",
+          "des-n-4": "🔹Déploiement d’IA dans des applications concrètes et industrielles",
+          "note": "📌 Bénéfice : Devenez un expert dans l’IA et l’automatisation."
         },
         {
           "id": 6,
-          "nom": "Optimisation et Performance",
-          "des-n": [
-            "Profiling", "Debugging", "Multithreading", "Asynchronisme", "Parallélisme"
-          ],
-          "des-n-1": "🔹Techniques avancées de profiling et debugging",
-          "des-n-2": "🔹Gestion du multithreading, asynchronisme et parallélisme",
-          "des-n-3": "🔹Optimisation de la consommation mémoire et rapidité d’exécution",
-          "des-n-4": "🔹Correction des goulets d’étranglement dans les applications",
-          "note": "📌 Bénéfice : Développez des applications performantes et fluides."
+          "nom": "Automatisation et Agents Conversationnels 🤖💬",
+          "des-n": "💡 Utilisez l’IA pour automatiser des processus et interagir intelligemment",
+          "des-n-1": "🔹Développement de chatbots et assistants vocaux (ChatGPT, Rasa, Dialogflow)",
+          "des-n-2": "🔹Automatisation des tâches avec RPA (UiPath, Power Automate, Selenium)",
+          "des-n-3": "🔹Intégration des API IA et NLP pour améliorer les interactions",
+          "des-n-4": "🔹Optimisation des processus métiers avec l’IA",
+          "note": "📌 Bénéfice : Une compétence clé pour l’avenir du travail et l’expérience client."
         },
         {
           "id": 7,
-          "nom": "Développement Mobile",
-          "des-n": [
-            "Android (Kotlin, Java)", "iOS (Swift)", "Flutter", "React Native"
-          ],
-          "des-n-1": "🔹Développement natif : Android (Kotlin, Java) & iOS (Swift)",
-          "des-n-2": "🔹Technologies multiplateformes : Flutter, React Native",
-          "des-n-3": "🔹Optimisation des performances et de l’expérience utilisateur",
-          "des-n-4": "🔹Intégration des API et exploitation des fonctionnalités mobiles avancées",
-          "note": "📌 Bénéfice : Une compétence essentielle dans un monde mobile-first."
+          "nom": "Bases de données & Big Data",
+          "des-n": "💡 Gérez et analysez des données massives efficacement",
+          "des-n-1": "🔹 Bases relationnelles : MySQL, PostgreSQL, SQL Server",
+          "des-n-2": "🔹 Bases NoSQL : MongoDB, Redis, Firebase",
+          "des-n-3": "🔹 Traitement et analyse de Big Data (Hadoop, Spark)",
+          "des-n-4": "🔹 Optimisation des bases pour la rapidité et la scalabilité",
+          "note": "📌 Bénéfice : Une maîtrise des données indispensable pour la tech moderne."
         }
       ]
     }
   ,
     {
       "id":3,
-      "domaines":"Maîtriser la Programmation et le Développement",
+      "domaines":"Déployer et Optimiser avec les Technologies Avancées",
       "description": "💡 Posez des bases solides et construisez des applications performantes",
       "note": "📌 Pourquoi ? Une excellente base technique vous ouvrira toutes les portes du développement logiciel et web.",
       "sdomaines" : [ 
         {
           "id": 8,
-          "nom": "Bases de données & Big Data",
-          "des-n": [
-            "MySQL", "PostgreSQL", "SQL Server", "MongoDB", "Redis", "Firebase", "Hadoop", "Spark"
-          ],
-          "des-n-1": "🔹Bases relationnelles : MySQL, PostgreSQL, SQL Server",
-          "des-n-2": "🔹Bases NoSQL : MongoDB, Redis, Firebase",
-          "des-n-3": "🔹Traitement et analyse de Big Data (Hadoop, Spark)",
-          "des-n-4": "🔹Optimisation des bases pour la rapidité et la scalabilité",
-          "note": "📌 Bénéfice : Une maîtrise des données indispensable pour la tech moderne."
+          "nom": "Cloud Computing & DevOps ☁️",
+          "des-n": "💡 Déployez et gérez des infrastructures modernes et évolutives",
+          "des-n-1": "🔹 Services cloud : AWS, Azure, Google Cloud",
+          "des-n-2": "🔹 Automatisation des déploiements avec Docker, Kubernetes, Terraform",
+          "des-n-3": "🔹 Intégration et déploiement continu (CI/CD)",
+          "des-n-4": "🔹 Optimisation des infrastructures pour la scalabilité et la résilience",
+          "note": "📌 Bénéfice : Des compétences indispensables pour l’ère du cloud."
         },
         {
           "id": 9,
-          "nom": "Automatisation et Agents Conversationnels",
-          "des-n": [
-            "ChatGPT", "Rasa", "Dialogflow", "UiPath", "Power Automate", "Selenium"
-          ],
-          "des-n-1": "🔹Développement de chatbots et assistants vocaux (ChatGPT, Rasa, Dialogflow)",
-          "des-n-2": "🔹Automatisation des tâches avec RPA (UiPath, Power Automate, Selenium)",
-          "des-n-3": "🔹Intégration des API IA et NLP pour améliorer les interactions",
-          "des-n-4": "🔹Optimisation des processus métiers avec l’IA",
-          "note": "📌 Bénéfice : Une compétence clé pour l’avenir du travail et l’expérience client."
+          "nom": "Optimisation et Performance",
+          "des-n": "💡 Écrivez du code rapide et efficace",
+          "des-n-1": "🔹 Techniques avancées de profiling et debugging",
+          "des-n-2": "🔹 Gestion du multithreading, asynchronisme et parallélisme",
+          "des-n-3": "🔹 Optimisation de la consommation mémoire et rapidité d’exécution",
+          "des-n-4": "🔹 Correction des goulets d’étranglement dans les applications",
+          "note": "📌 Bénéfice : Développez des applications performantes et fluides."
         }
       ]
     },
     {
       "id":4,
-      "domaines":"Maîtriser la Programmation et le Développement",
+      "domaines":"Développer des Compétences Stratégiques",
       "description": "💡 Posez des bases solides et construisez des applications performantes",
       "note": "📌 Pourquoi ? Une excellente base technique vous ouvrira toutes les portes du développement logiciel et web.",
       "sdomaines" : [
         {
           "id": 10,
           "nom": "Intelligence Émotionnelle & Soft Skills",
-          "des-n": [
-            "Travail en équipe", "Gestion de projet agile", "Résolution de problèmes", "Pensée critique", "Communication efficace", "Gestion du stress", "Leadership", "Capacité d’adaptation"
-          ],
+          "des-n": "💡 Développez des compétences humaines indispensables en tech",
           "des-n-1": "🔹Travail en équipe et gestion de projet agile",
           "des-n-2": "🔹Résolution de problèmes et pensée critique",
           "des-n-3": "🔹Communication efficace et gestion du stress",
@@ -153,9 +134,7 @@
         {
           "id": 11,
           "nom": "Projets pratiques & Portfolio",
-          "des-n": [
-            "Projets concrets", "Études de cas", "Portfolio attractif", "Hackathons", "Challenges de code", "Projets open source"
-          ],
+          "des-n": "💡 Mettez en pratique vos compétences sur des cas réels",
           "des-n-1": "🔹Création de projets concrets et études de cas",
           "des-n-2": "🔹Développement d’un portfolio attractif pour les recruteurs",
           "des-n-3": "🔹Participation à des hackathons et challenges de code",
@@ -165,9 +144,7 @@
         {
           "id": 12,
           "nom": "Formation continue & veille technologique",
-          "des-n": [
-            "Innovations technologiques", "Meetups", "Conférences", "Formations avancées", "Culture tech", "Communautés tech"
-          ],
+          "des-n": "💡 Restez à la pointe des dernières innovations technologiques",
           "des-n-1": "🔹Suivi des dernières innovations technologiques",
           "des-n-2": "🔹Participation à des meetups, conférences et formations avancées",
           "des-n-3": "🔹Développement d’une culture tech pour anticiper l’avenir",
