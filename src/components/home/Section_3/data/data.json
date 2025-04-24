@@ -112,6 +112,16 @@
           "des-n-3": "🔹 Optimisation de la consommation mémoire et rapidité d’exécution",
           "des-n-4": "🔹 Correction des goulets d’étranglement dans les applications",
           "note": "📌 Bénéfice : Développez des applications performantes et fluides."
+        },
+        {
+          "id": 15,
+          "nom": "15 Optimisation et Performance",
+          "des-n": "💡 Écrivez du code rapide et efficace",
+          "des-n-1": "🔹 Techniques avancées de profiling et debugging",
+          "des-n-2": "🔹 Gestion du multithreading, asynchronisme et parallélisme",
+          "des-n-3": "🔹 Optimisation de la consommation mémoire et rapidité d’exécution",
+          "des-n-4": "🔹 Correction des goulets d’étranglement dans les applications",
+          "note": "📌 Bénéfice : Développez des applications performantes et fluides."
         }
       ]
     },
